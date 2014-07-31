@@ -1,0 +1,135 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MissingNumber
+{
+
+    class SequenceFixer
+    {
+        #region Private Members
+        private List<Int32> _sequence;
+        #endregion
+
+        #region Constructors
+        public SequenceFixer()
+        {
+            _sequence = new List<int>();
+        }
+
+        public SequenceFixer(int[] arr)
+        {
+            this.SetSequence(arr);
+        }
+        #endregion
+
+        #region Public Methods
+        public int FindMissingNumber()
+        {
+            int num1 = -1;   // first comparitor
+            int num2 = -1;   // second comparitor
+
+            for (int i = 0; i < _sequence.Count() - 1; ++i)
+            {
+                num1 = _sequence.ElementAt(i);
+                num2 = _sequence.ElementAt(i + 1);
+                if (num2 - num1 > 1)    // if there's a gap
+                    return num1 + 1;    // return the integer after num1
+            }
+
+            return (_sequence.Last() + 1); // if none missing, return theoretical next integer in sequence
+        }
+
+        public void SetSequence(int[] arr)
+        {
+            _sequence.Clear();
+            _sequence = arr.ToList<Int32>();
+            _sequence.Sort();
+        }
+        #endregion
+
+        #region Overrides
+        public override string ToString()
+        {
+            return "{ " + String.Join(", ", _sequence.ToArray<Int32>()) + " }";
+        }
+        #endregion
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // get the file
+            string filename;
+            if (args.Count() > 0)   // use filename arg, if present
+                filename = args[0];
+            else
+            {
+                Console.WriteLine("Please enter the file path of the input file: ");
+                filename = Console.ReadLine();
+            }
+
+            // open the file
+            StreamReader sr = null;
+            try 
+            { 
+                sr = new StreamReader(filename); 
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("The file was not found!  Please check the file path and try again.");
+                Halt(); // allow user to read output
+                return;
+            }
+
+            // read the file, spit out missing numbers
+            string line;
+            SequenceFixer sf = new SequenceFixer();
+            string[] lineParsed;
+            int[] lineAsArr;
+            while ((line = sr.ReadLine()) != null)
+            {
+                if (line != "")
+                {
+                    try
+                    {
+                        lineParsed = line.Split(',');
+                        lineAsArr = Array.ConvertAll(lineParsed, Int32.Parse);
+                        sf.SetSequence(lineAsArr);
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Incorrect file format! Please check the file path and try again.");
+                        Halt(); // allow user to read output
+                        return;
+                    }
+
+                    Console.WriteLine("Original: " + "{ " + String.Join(", ", lineAsArr) + " }");
+                    Console.WriteLine("Sorted:   " + sf);
+                    Console.WriteLine("Missing:  " + sf.FindMissingNumber());
+                    Console.WriteLine("=====================\n");
+                }
+            }
+
+            // cleanup
+            sr.Close();
+            sr.Dispose();
+
+            Halt(); // allow user to read output
+
+            return;
+        }
+
+        private static void Halt()
+        {
+            Console.WriteLine("\nPress any key to exit");
+            Console.ReadKey(true);
+        }
+
+    }
+
+}
