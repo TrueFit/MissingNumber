@@ -1,0 +1,142 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace SequenceFinder
+{
+    /// <summary>
+    /// Purpose: Controller class that interfaces with Form class
+    /// </summary>
+    public class MissingSequence
+    {
+        #region Constructors
+
+        //Generic constructor
+        public MissingSequence()
+        {
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Purpose: This class provides the public method for the form.
+        /// </summary>
+        /// <param name="file_name_and_path">The fully qualified file name</param>
+        /// <returns>Formatted string to display on the form containing the missing number in the sequence.</returns>
+        public string FindMissingNumbers(string file_name_and_path)
+        {
+            return ReadInputFile(file_name_and_path);            
+        }
+
+        /// <summary>
+        /// Purpose: Accepts the fully qualified file name from the form, opens it, and reads it line-by-line.
+        ///          Validates that only integer data is read.
+        ///          Could be extended to accept another data item class to handle other data types.
+        /// </summary>
+        /// <param name="input_file">The fully qualified file name</param>
+        /// <returns>Formatted string to display on the form containing the missing number in the sequence.</returns>
+        private string ReadInputFile(string input_file)
+        {
+            //Local variables
+            string stream_reader_string;
+            string missing_value = "";
+            string return_value = "";
+
+            try
+            {
+                //Open file and read the contents line-by-line using StreamReader object
+                FileInfo file_info = new FileInfo(input_file);
+
+                using (StreamReader s_reader = file_info.OpenText())
+                {
+                    while ((stream_reader_string = s_reader.ReadLine()) != null)
+                    {
+                        //Skip extraneous line feeds in file
+                        if (stream_reader_string.Length > 0)
+                        {
+                            //Instantiate the MissingDataItem object
+                            //This object only handles integer typed data
+                            MissingDataItem missing_data_obj = MissingDataItem.Instance;
+                            int test_value;
+
+                            string[] file_line = stream_reader_string.Split(',');
+
+                            foreach (string new_line in file_line)
+                            {
+                                //Skip any non-integer values in sequence
+                                if (Int32.TryParse(new_line, out test_value))
+                                {
+                                    //Set integer value to data item member of MissingDataItem object
+                                    missing_data_obj.data_item = Int32.Parse(new_line);
+
+                                    //Add integer value to List type member of MissingDataItem object
+                                    missing_data_obj.data_items_list.Add(missing_data_obj.data_item);
+                                }
+                            }
+
+                            //Method call to find missing integer in sequence
+                            missing_value = missing_data_obj.FindMissingNumberSequence(missing_data_obj.data_items_list);
+
+                            //Method call to format final return string to form
+                            return_value += FormatReturnValue(missing_data_obj, missing_value);
+
+                            missing_data_obj.ClearDataList();
+
+                        }
+                    }
+                }
+
+                //Return formatted output to public method
+                return return_value;
+            }
+            catch (FileNotFoundException fnfException)
+            {
+                string error_string = "File not found.  Please select a different file."
+                                    + fnfException.InnerException + Environment.NewLine + fnfException.Message;
+                MessageBox.Show(error_string, "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+            catch (IOException ioException)
+            {
+                string error_string = "An exception has occurred: " + ioException.InnerException
+                                    + Environment.NewLine + ioException.Message;
+                MessageBox.Show(error_string, "Exception Occurred", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+
+        }
+
+        /// <summary>
+        /// Purpose: Private class to format the return value to the form.
+        /// </summary>
+        /// <param name="data_list">MissingDataItem object - allows access to original
+        ///                         input integer string</param>
+        /// <param name="value">Missing value in input string</param>
+        /// <returns>Formatted output to form</returns>
+        private string FormatReturnValue( MissingDataItem data_list, string missing_value )
+        {
+            string return_value = "";
+
+            return_value = Environment.NewLine + "Original input list" + Environment.NewLine;
+
+            //Loop through original input integer string
+            for (int i=0; i < data_list.data_items_list.Count; i++)
+            {
+                //Guarantees placement of comma
+                if (i < (data_list.data_items_list.Count - 1))
+                    return_value += data_list.data_items_list[i] + ",";
+                else
+                    return_value += data_list.data_items_list[i];
+            }
+
+            return_value += Environment.NewLine + "Missing number in list" + Environment.NewLine + missing_value + Environment.NewLine;
+
+            return return_value;
+        }
+    }
+}

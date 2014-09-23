@@ -1,0 +1,122 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+
+namespace SequenceFinder
+{
+    /// <summary>
+    /// Purpose: This class serves to encapsulate the definition a data item 
+    ///          contained in the input file as an integer.
+    ///          
+    ///          This class can be extended to handle other data types.
+    ///          
+    ///          Declared class as a singleton to prevent multiple instances
+    ///          based on how object is instantiated by consuming class.
+    /// </summary>
+    public sealed class MissingDataItem
+    {
+
+        //Singleton member variables
+        private static MissingDataItem _instance = null;
+        private static readonly object padLock = new object();
+
+        //Private member variables
+        private int m_data_item;
+        private List<int> m_data_items_list;
+
+        #region Constructors
+        /// <summary>
+        /// Public constructor
+        /// </summary>
+        private MissingDataItem()
+        {
+            m_data_item = 0;
+            m_data_items_list = new List<int> { };
+        }
+        
+        /// <summary>
+        /// Singleton instance variable
+        /// </summary>
+        /// <returns></returns>
+        public static MissingDataItem Instance
+        {
+            get
+            {
+                lock (padLock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new MissingDataItem();
+                    }
+                    return _instance;
+                }
+            }
+        }
+
+        #endregion
+
+        //Data item property
+        public int data_item
+        {
+            get { return m_data_item; }
+            set { m_data_item = value; }
+        }
+
+        //List of data items property
+        public List<int> data_items_list
+        {
+            get { return m_data_items_list; }
+            set { m_data_items_list = value; }
+        }
+
+        #region private local methods
+
+
+        /// <summary>
+        /// Purpose: Public exposed method on the MissingDataItem object that searches a List<int>
+        ///          to determine the missing number in the passed in list.
+        /// </summary>
+        /// <param name="data_sequence_list">List of integer values</param>
+        /// <returns>String representation of the number(s) missing in the sequence.</returns>
+        public string FindMissingNumberSequence(List<int> data_sequence_list)
+        {
+            string return_value = "";
+            
+            //Sort list containing integer sequence
+            data_sequence_list.Sort();
+
+            //Define the range based on the smallest and largest number in the sorted list
+            int smallest_number = data_sequence_list[0];
+            int largest_number = data_sequence_list[data_sequence_list.Count - 1];
+
+            List<int> all_numbers = Enumerable.Range(smallest_number, largest_number - smallest_number + 1).ToList();
+
+            //Read the missing numbers in the sequence into a List
+            List<int> missing_numbers = all_numbers.Except(data_sequence_list).ToList();
+
+            //Loop to return all missing values
+            foreach (int j in missing_numbers)
+            {
+                return_value = j.ToString();
+            }
+
+            return return_value;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Purpose: Public exposed method that clears the contents of the data_items_list member List variable.
+        ///          Serves as cleanup.
+        /// </summary>
+        public void ClearDataList()
+        {
+            m_data_items_list.Clear();
+        }
+
+    }
+}

@@ -1,0 +1,113 @@
+namespace MissingNumberCodeProject
+{
+    partial class frmMissingNumber
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblMissingNumberLabel = new System.Windows.Forms.Label();
+            this.lblInputFile = new System.Windows.Forms.Label();
+            this.txtInputFile = new System.Windows.Forms.TextBox();
+            this.btnUploadFile = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.txtDisplayMissingNumbers = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // lblMissingNumberLabel
+            // 
+            this.lblMissingNumberLabel.AutoSize = true;
+            this.lblMissingNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMissingNumberLabel.Location = new System.Drawing.Point(13, 25);
+            this.lblMissingNumberLabel.Name = "lblMissingNumberLabel";
+            this.lblMissingNumberLabel.Size = new System.Drawing.Size(567, 20);
+            this.lblMissingNumberLabel.TabIndex = 0;
+            this.lblMissingNumberLabel.Text = "This application will find the missing number in an inputed sequence of numbers";
+            // 
+            // lblInputFile
+            // 
+            this.lblInputFile.AutoSize = true;
+            this.lblInputFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputFile.Location = new System.Drawing.Point(17, 58);
+            this.lblInputFile.Name = "lblInputFile";
+            this.lblInputFile.Size = new System.Drawing.Size(242, 16);
+            this.lblInputFile.TabIndex = 1;
+            this.lblInputFile.Text = "To begin, please select a file to upload:";
+            // 
+            // txtInputFile
+            // 
+            this.txtInputFile.Location = new System.Drawing.Point(17, 77);
+            this.txtInputFile.Name = "txtInputFile";
+            this.txtInputFile.Size = new System.Drawing.Size(242, 20);
+            this.txtInputFile.TabIndex = 2;
+            // 
+            // btnUploadFile
+            // 
+            this.btnUploadFile.Location = new System.Drawing.Point(266, 73);
+            this.btnUploadFile.Name = "btnUploadFile";
+            this.btnUploadFile.Size = new System.Drawing.Size(75, 23);
+            this.btnUploadFile.TabIndex = 3;
+            this.btnUploadFile.Text = "Select File";
+            this.btnUploadFile.UseVisualStyleBackColor = true;
+            this.btnUploadFile.Click += new System.EventHandler(this.btnUploadFile_Click);
+            // 
+            // txtDisplayMissingNumbers
+            // 
+            this.txtDisplayMissingNumbers.Location = new System.Drawing.Point(17, 113);
+            this.txtDisplayMissingNumbers.Multiline = true;
+            this.txtDisplayMissingNumbers.Name = "txtDisplayMissingNumbers";
+            this.txtDisplayMissingNumbers.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtDisplayMissingNumbers.Size = new System.Drawing.Size(324, 277);
+            this.txtDisplayMissingNumbers.TabIndex = 4;
+            // 
+            // frmMissingNumber
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(948, 454);
+            this.Controls.Add(this.txtDisplayMissingNumbers);
+            this.Controls.Add(this.btnUploadFile);
+            this.Controls.Add(this.txtInputFile);
+            this.Controls.Add(this.lblInputFile);
+            this.Controls.Add(this.lblMissingNumberLabel);
+            this.Name = "frmMissingNumber";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Missing Number";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblMissingNumberLabel;
+        private System.Windows.Forms.Label lblInputFile;
+        private System.Windows.Forms.TextBox txtInputFile;
+        private System.Windows.Forms.Button btnUploadFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.TextBox txtDisplayMissingNumbers;
+    }
+}
+
