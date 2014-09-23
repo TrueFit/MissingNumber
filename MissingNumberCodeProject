@@ -1,0 +1,111 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+using SequenceFinder;
+
+//************************************************************************************//
+//Purpose: Project that accepts a flat file as input and determines the missing       //
+//         integer in a comma-delimited sequence of numbers.                          //
+//                                                                                    //
+//Author: Juliet M. Law                                                               //
+//Version Date: 09/23/2014                                                            //
+//Version: .Net 3.5                                                                   //
+//Solution: 1. Created a Windows Form project using C# that requested the user to     //
+//             select a flat file from a directory as input.                          //
+//          2. Form class validates the user input.                                   //
+//          3. Form class calls a controller class (MissingSequence) that reads the   //
+//             file, validates the contents as integers, and calls a data object to   //
+//             determine the missing number.                                          //
+//          4. Contoller class passes a formatted output to the Form class to display //
+//             to the user.                                                           //
+//                                                                                    //
+//************************************************************************************//
+namespace MissingNumberCodeProject
+{
+    public partial class frmMissingNumber : Form
+    {
+        #region Constructors
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public frmMissingNumber()
+        {
+            InitializeComponent();
+        }
+        #endregion
+
+        #region local methods
+        /// <summary>
+        /// Purpose: Button click event will open the file dialog box so user can select desired file.
+        ///          
+        ///          Instantiate the MissingSequence object to find the missing integer value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUploadFile_Click(object sender, EventArgs e)
+        {
+
+            int file_size = -1;
+            
+            //Instantiate MissingSequence object
+            MissingSequence missing_sequence = new MissingSequence();
+
+            //Open the OpenFileDialog control
+            DialogResult dialog_result = openFileDialog.ShowDialog();
+
+            //If user selected the OK button, validate that the file contains data and proceed
+            if (dialog_result == DialogResult.OK)
+            {
+                string file_name_and_path = openFileDialog.FileName;
+                
+                try
+                {
+                    string file_contents = File.ReadAllText(file_name_and_path);
+                    file_size = file_contents.Length;
+
+                    //Validate file contains data
+                    if (file_size > 0)
+                    {
+                        txtInputFile.Text = file_name_and_path;
+
+                        //Call public method on MissingSequence object to find the missing numbers
+                        txtDisplayMissingNumbers.Text = missing_sequence.FindMissingNumbers(file_name_and_path);
+
+                    }
+
+                    //Capture empty file
+                    else
+                    {
+                        string error_string = "The file you selected is empty."
+                                            + "  Please select another file to open.";
+
+                        MessageBox.Show(error_string, "Empty File Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        //Clean up by clearing out textboxes
+                        txtInputFile.Text = "";
+                        txtDisplayMissingNumbers.Text = "";
+                    }
+                }
+
+                catch (IOException ioException)
+                {
+                    string error_string = "An exception has occurred: " + ioException.InnerException
+                                        + Environment.NewLine + ioException.Message;
+
+                    MessageBox.Show(error_string, "IO Exception Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        
+        #endregion
+
+    }
+}
