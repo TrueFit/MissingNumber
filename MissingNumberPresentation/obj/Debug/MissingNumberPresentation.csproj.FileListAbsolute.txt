@@ -1,0 +1,11 @@
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\bin\Debug\MissingNumberPresentation.exe.config
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\bin\Debug\MissingNumberPresentation.exe
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\bin\Debug\MissingNumberPresentation.pdb
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\obj\Debug\MissingNumberPresentation.Form1.resources
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\obj\Debug\MissingNumberPresentation.Properties.Resources.resources
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\obj\Debug\MissingNumberPresentation.csproj.GenerateResource.Cache
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\obj\Debug\MissingNumberPresentation.exe
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\obj\Debug\MissingNumberPresentation.pdb
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\obj\Debug\MissingNumberPresentation.csprojResolveAssemblyReference.cache
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\bin\Debug\MissingNumberDataManagement.dll
+C:\git\MissingNumber\MissingNumber\MissingNumberPresentation\bin\Debug\MissingNumberDataManagement.pdb
