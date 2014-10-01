@@ -1,0 +1,4 @@
+C:\git\MissingNumber\MissingNumber\MissingNumberDataManagement\bin\Debug\MissingNumberDataManagement.dll
+C:\git\MissingNumber\MissingNumber\MissingNumberDataManagement\bin\Debug\MissingNumberDataManagement.pdb
+C:\git\MissingNumber\MissingNumber\MissingNumberDataManagement\obj\Debug\MissingNumberDataManagement.dll
+C:\git\MissingNumber\MissingNumber\MissingNumberDataManagement\obj\Debug\MissingNumberDataManagement.pdb

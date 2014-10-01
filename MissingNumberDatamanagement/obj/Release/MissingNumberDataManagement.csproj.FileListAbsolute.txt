@@ -1,0 +1,9 @@
+C:\git\MissingNumber\MissingNumber\MissingNumberDataManagement\bin\Release\MissingNumberDataManagement.dll
+C:\git\MissingNumber\MissingNumber\MissingNumberDataManagement\bin\Release\MissingNumberDataManagement.pdb
+C:\git\MissingNumber\MissingNumber\MissingNumberDataManagement\obj\Release\MissingNumberDataManagement.dll
+C:\git\MissingNumber\MissingNumber\MissingNumberDataManagement\obj\Release\MissingNumberDataManagement.pdb
+C:\git\MissingNumber\MissingNumberDataManagement\bin\Release\MissingNumberDataManagement.dll
+C:\git\MissingNumber\MissingNumberDataManagement\bin\Release\MissingNumberDataManagement.pdb
+C:\git\MissingNumber\MissingNumberDataManagement\obj\Release\MissingNumberDataManagement.dll
+C:\git\MissingNumber\MissingNumberDataManagement\obj\Release\MissingNumberDataManagement.pdb
+C:\git\MissingNumber\MissingNumberDataManagement\obj\Release\MissingNumberDataManagement.csprojResolveAssemblyReference.cache
