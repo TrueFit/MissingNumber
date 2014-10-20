@@ -34,7 +34,7 @@ func ConvertToInt(stringSlice []string) (intSlice []int) {
 	for _, value := range stringSlice {
 		intValue, err := strconv.Atoi(value)
 		if err != nil {
-			fmt.Printf("Oh noes!  There was some bad data in this string %s\n", stringSlice)
+			fmt.Printf("There was some bad data in this string %s\n", stringSlice)
 			return intSlice
 		}
 		intSlice = append(intSlice, intValue)
