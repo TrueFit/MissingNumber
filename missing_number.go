@@ -42,7 +42,7 @@ func ConvertToInt(stringSlice []string) (intSlice []int) {
 	return intSlice
 }
 
-func FindMissingNumber(sequence []int) (missingNumber int, foundMissingNumber bool) {
+func FindMissingNumber(sequence []int) (int, bool) {
 	sort.Ints(sequence)
 	for index, value := range sequence {
 		if index+1 == len(sequence) {
