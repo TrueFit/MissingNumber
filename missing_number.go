@@ -22,7 +22,7 @@ func main() {
 		stringSlice := strings.Split(scanner.Text(), ",")
 		intSlice, err := ConvertToInt(stringSlice)
 		if err != nil {
-			continue
+			continue // skip this line since there is some bad data.
 		}
 		missingNumber, foundMissingNumber := FindMissingNumber(intSlice)
 		if foundMissingNumber {
