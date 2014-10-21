@@ -20,7 +20,10 @@ func main() {
 	scanner := bufio.NewScanner(csvFile)
 	for scanner.Scan() {
 		stringSlice := strings.Split(scanner.Text(), ",")
-		intSlice := ConvertToInt(stringSlice)
+		intSlice, err := ConvertToInt(stringSlice)
+		if err != nil {
+			continue
+		}
 		missingNumber, foundMissingNumber := FindMissingNumber(intSlice)
 		if foundMissingNumber {
 			fmt.Println(missingNumber)
@@ -30,16 +33,16 @@ func main() {
 	}
 }
 
-func ConvertToInt(stringSlice []string) (intSlice []int) {
+func ConvertToInt(stringSlice []string) (intSlice []int, err error) {
 	for _, value := range stringSlice {
 		intValue, err := strconv.Atoi(value)
 		if err != nil {
 			fmt.Printf("There was some bad data in this string %s\n", stringSlice)
-			return intSlice
+			return intSlice, err
 		}
 		intSlice = append(intSlice, intValue)
 	}
-	return intSlice
+	return intSlice, err
 }
 
 func FindMissingNumber(sequence []int) (int, bool) {
