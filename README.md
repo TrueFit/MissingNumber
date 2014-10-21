@@ -1,3 +1,5 @@
+[Screencast of code walkthough here](http://youtu.be/PfBjI30KXa8)
+
 Missing Number
 ==============
 
