@@ -1,0 +1,9 @@
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\bin\Debug\numbers.txt
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\bin\Debug\TrueFit.exe.config
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\bin\Debug\TrueFit.exe
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\bin\Debug\TrueFit.pdb
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\bin\Debug\ClassLibrary1.dll
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\bin\Debug\ClassLibrary1.pdb
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\obj\Debug\TrueFit.exe
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\obj\Debug\TrueFit.pdb
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\TrueFit\obj\Debug\TrueFitMissingNumberExercise.csprojResolveAssemblyReference.cache
