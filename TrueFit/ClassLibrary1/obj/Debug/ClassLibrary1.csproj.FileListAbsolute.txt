@@ -1,0 +1,5 @@
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\leslie\Documents\Visual Studio 2015\Projects\TrueFit\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
