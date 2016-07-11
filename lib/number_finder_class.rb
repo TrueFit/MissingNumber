@@ -5,13 +5,11 @@ class NumberFinder
     if(stringArr.length>1)
       numberArr = convertToInts(stringArr)
       missingNum = checkForMissingNumber(numberArr)
-      return missingNum
     end
   end
 
   def lineToArray(fileString)
     stringArr = fileString.split(",")
-    return stringArr
   end
 
   def convertToInts(stringArr)
@@ -27,11 +25,13 @@ class NumberFinder
 
   def checkForMissingNumber(unsortedArr)
     numberArray = unsortedArr.sort
+    missingNum = ""
     # Checks each number agaist the next highest EXCEPT for the last number
     (0..numberArray.length-2).each do |k|
       if(numberArray[k]+1 != numberArray[k+1])
-        return numberArray[k]+1
+        missingNum = numberArray[k]+1
       end
     end
+    return missingNum
   end
 end
