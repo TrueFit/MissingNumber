@@ -117,4 +117,20 @@ describe NumberFinder do
     end
   end
 
+
+  describe ".checkIfDigit" do
+    context "given 's'" do
+      it "returns false" do
+        result = @numFinder.checkIfDigit("s")
+        expect(result).to eql(false)
+      end
+    end
+
+    context "given '1'" do
+      it "returns true" do
+        result = @numFinder.checkIfDigit("1")
+        expect(result).to eql(true)
+      end
+    end
+  end
 end
