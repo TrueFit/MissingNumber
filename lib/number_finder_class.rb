@@ -16,21 +16,16 @@ class NumberFinder
     indexCount = 0
     unsortedArr = Array.new
     stringArr.each do |numChar|
-      if(checkIfDigit(numChar)==true)
-        number = numChar.to_i
-        unsortedArr[indexCount] = number
-        indexCount = indexCount + 1
-      end
+      numchar = deleteExtraLetters(numChar)
+      number = numChar.to_i
+      unsortedArr[indexCount] = number
+      indexCount = indexCount + 1
     end
     return unsortedArr
   end
 
-  def checkIfDigit(input)
-    if(/[0-9]/.match(input) == nil)
-      return false
-    else
-      return true
-    end
+  def deleteExtraLetters(input)
+    input = input.gsub(/[^[0-9]]/,"")
   end
 
   def checkForMissingNumber(unsortedArr)

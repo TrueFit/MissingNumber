@@ -5,6 +5,7 @@ describe NumberFinder do
     @numFinder = NumberFinder.new
   end
 
+
   describe ".lineToArray" do
 
     context "given the string '1'" do
@@ -81,6 +82,7 @@ describe NumberFinder do
   end
 
 
+
   describe ".checkForMissingNumber" do
     context "given [3,1]" do
       it "returns 2" do
@@ -105,8 +107,9 @@ describe NumberFinder do
         expect(result).to eql(4)
       end
     end
-
   end
+
+
 
   describe ".findMissingNumber" do
     context "given '1,3'" do
@@ -118,18 +121,68 @@ describe NumberFinder do
   end
 
 
-  describe ".checkIfDigit" do
+
+  describe ".deleteExtraLetters" do
     context "given 's'" do
-      it "returns false" do
-        result = @numFinder.checkIfDigit("s")
-        expect(result).to eql(false)
+      it "returns ''" do
+        result = @numFinder.deleteExtraLetters("s")
+        expect(result).to eql('')
       end
     end
 
     context "given '1'" do
-      it "returns true" do
-        result = @numFinder.checkIfDigit("1")
-        expect(result).to eql(true)
+      it "returns '1''" do
+        result = @numFinder.deleteExtraLetters("1")
+        expect(result).to eql("1")
+      end
+    end
+
+    context "given '193'" do
+      it "returns '193''" do
+        result = @numFinder.deleteExtraLetters("193")
+        expect(result).to eql("193")
+      end
+    end
+
+    context "given 'alottaletters'" do
+      it "returns ''" do
+        result = @numFinder.deleteExtraLetters("alottaletters")
+        expect(result).to eql('')
+      end
+    end
+
+    context "given '1s'" do
+      it "returns '1'" do
+        result = @numFinder.deleteExtraLetters("1s")
+        expect(result).to eql("1")
+      end
+    end
+
+    context "given 'r4'" do
+      it "returns '4'" do
+        result = @numFinder.deleteExtraLetters("r4")
+        expect(result).to eql("4")
+      end
+    end
+
+    context "given '1s2'" do
+      it "returns '12'" do
+        result = @numFinder.deleteExtraLetters("1s2")
+        expect(result).to eql("12")
+      end
+    end
+
+    context "given 'r1q'" do
+      it "returns '1'" do
+        result = @numFinder.deleteExtraLetters("r1")
+        expect(result).to eql("1")
+      end
+    end
+
+    context "given 'wp10'" do
+      it "returns '10'" do
+        result = @numFinder.deleteExtraLetters("wp10")
+        expect(result).to eql("10")
       end
     end
   end
