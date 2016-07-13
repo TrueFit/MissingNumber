@@ -1,23 +1,23 @@
 class NumberFinder
 
-  def findMissingNumber(lineOfFile)
-    stringArr = lineToArray(lineOfFile)
+  def get_missing_number(lineOfFile)
+    stringArr = to_string_array(lineOfFile)
     if(stringArr.length>1)
-      unsortedArr = convertToInts(stringArr)
-      numberArr = sortNumbers(unsortedArr)
-      missingNum = checkForMissingNumber(numberArr)
+      unsortedArr = to_int_array(stringArr)
+      numberArr = sort_numbers(unsortedArr)
+      missingNum = check_for_missing_number(numberArr)
     end
   end
 
-  def lineToArray(fileString)
+  def to_string_array(fileString)
     stringArr = fileString.split(",")
   end
 
-  def convertToInts(stringArr)
+  def to_int_array(stringArr)
     indexCount = 0
     unsortedArr = Array.new
     stringArr.each do |numChar|
-      numchar = deleteExtraLetters(numChar)
+      numchar = delete_extra_letters(numChar)
       number = numChar.to_i
       unsortedArr[indexCount] = number
       indexCount = indexCount + 1
@@ -25,15 +25,15 @@ class NumberFinder
     return unsortedArr
   end
 
-  def deleteExtraLetters(input)
+  def delete_extra_letters(input)
     input = input.gsub(/[^[0-9]]/,"")
   end
 
-  def sortNumbers(unsortedArr)
+  def sort_numbers(unsortedArr)
     numberArray = unsortedArr.sort
   end
 
-  def checkForMissingNumber(numberArray)
+  def check_for_missing_number(numberArray)
     missingNum = ""
     # Checks each number agaist the next highest EXCEPT for the last number
     (0..numberArray.length-2).each do |k|
