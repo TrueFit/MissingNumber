@@ -96,9 +96,9 @@ describe NumberFinder do
 
 
   describe ".checkForMissingNumber" do
-    context "given an array of two single digit numbers one number apart" do
+    context "given a sorted array of two single digit numbers one number apart" do
       it "returns the single digit number in between them" do
-        testArray = [3,1]
+        testArray = [1,3]
         result = @numFinder.checkForMissingNumber(testArray)
         expect(result).to eql(2)
       end
@@ -114,7 +114,7 @@ describe NumberFinder do
 
     context "given an array of multiple numbers with one integer missing in an unordered sequence" do
       it "returns the integer that was " do
-        testArray = [3,1,5,2]
+        testArray = [1,2,3,5]
         result = @numFinder.checkForMissingNumber(testArray)
         expect(result).to eql(4)
       end
