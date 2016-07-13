@@ -38,7 +38,9 @@ class NumberFinder
     # Checks each number agaist the next highest EXCEPT for the last number
     (0..numberArray.length-2).each do |k|
       if(numberArray[k]+1 != numberArray[k+1])
-        missingNum = numberArray[k]+1
+        if(numberArray[k] != numberArray[k+1])
+          missingNum = numberArray[k]+1
+        end
       end
     end
     return missingNum
