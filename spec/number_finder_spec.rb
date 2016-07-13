@@ -159,6 +159,23 @@ describe NumberFinder do
         expect(result).to eql("")
       end
     end
+
+    context "given an ordered array of multiple numbers with a duplicate number and an integer missing in sequence" do
+      it "returns the integer that was missing" do
+        testArray = [1,2,2,4]
+        result = @numFinder.check_for_missing_number(testArray)
+        expect(result).to eql(3)
+      end
+    end
+
+    context "given an ordered array of multiple numbers with multiple duplicate numbers and an integer missing in sequence" do
+      it "returns the integer that was missing" do
+        testArray = [1,1,2,2,4,4,4]
+        result = @numFinder.check_for_missing_number(testArray)
+        expect(result).to eql(3)
+      end
+    end
+
   end
 
 
