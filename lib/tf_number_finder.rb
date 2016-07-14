@@ -2,7 +2,7 @@ require "./number_finder_class"
 
 # To change the input, edit the path below to point to
 # whichever file you want as input.
-fileInput = "test.txt"
+fileInput = "../spec/test.txt"
 
 
 finder = NumberFinder.new

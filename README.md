@@ -66,13 +66,31 @@ To use the class to find a missing number create an instance of the NumberFinder
 		classInstance = NumberFinder.new
 		puts classInstance.get_missing_number(someString)
 
+
 Some possible issues I foresaw were as follows:
 1. The input would only have one number in the sequence -> "1"
+	- The output returns nil as there is no number missing
 
 2. The input would be a full sequence with no number missing -> "1,2,3"
+	- The output returns nil as there is no number missing
 
 3. The input would be a non-digit -> "Y"
+	- This input is deleted as it has no effect on a number sequence
+	- Another option would be to store this data in the program instead of deleting it. That would be a discussion with the group leader and would take a closer look at the surrounding environment.
 
 4. The input could contain a sequence with one of the pieces having a number and a non-digit -> "1,2Y,4"
+	- This input is filtered and the non-digit is deleted. The program will still output the correct missing number after the extra non-digits are removed.
+	- Again, this would be a conversation with the other group members and would benefit from a good understanding of the direction and purpose of this program in relation to the project.
 
 5. The input could have multiple of the same number in a sequence -> "1,1,3"
+	- Duplicates are ignored and the string is parsed as usual
+
+
+TDD was used to write this program and can be found in the following directory:
+"/MissingNumber/spec/number_finder_spec.rb".
+
+A "test.txt" file can also be found in the same directory. This file was used to test the program once it was built. Normal input is stored there as well as any input that might cause problems.
+
+I also sought out code reviews before I submitted this file. I had missed some unit tests and was given advice on some specific case Ruby styling. It also prompted a discussion of better organization, which was beneficial to the readability of the program and unit tests.
+
+Thanks so much for letting me work through this program. I had a blast working through some of the problems and thinking about possible solutions as well! 

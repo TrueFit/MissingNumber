@@ -34,7 +34,7 @@ class NumberFinder
   end
 
   def check_for_missing_number(numberArray)
-    missingNum = ""
+    missingNum = nil
     # Checks each number agaist the next highest EXCEPT for the last number
     (0..numberArray.length-2).each do |k|
       if(numberArray[k]+1 != numberArray[k+1])
