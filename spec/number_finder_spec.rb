@@ -113,10 +113,10 @@ describe NumberFinder do
 
   describe ".check_for_missing_number" do
     context "given an array with only one number in it" do
-      it "returns an empty string" do
+      it "returns nil" do
         testArray = [3]
         result = @numFinder.check_for_missing_number(testArray)
-        expect(result).to eql("")
+        expect(result).to eql(nil)
       end
     end
 
@@ -137,10 +137,10 @@ describe NumberFinder do
     end
 
     context "given an ordered array of two numbers with no integer missing in sequence" do
-      it "returns empty string" do
+      it "returns nil" do
         testArray = [1,2]
         result = @numFinder.check_for_missing_number(testArray)
-        expect(result).to eql("")
+        expect(result).to eql(nil)
       end
     end
 
@@ -153,10 +153,10 @@ describe NumberFinder do
     end
 
     context "given an ordered array of multiple numbers with no integer missing in sequence" do
-      it "returns empty string" do
+      it "returns nil" do
         testArray = [1,2,3,4]
         result = @numFinder.check_for_missing_number(testArray)
-        expect(result).to eql("")
+        expect(result).to eql(nil)
       end
     end
 
