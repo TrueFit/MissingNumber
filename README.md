@@ -71,10 +71,8 @@ Some possible issues I foresaw were as follows:
 
 2. The input would be a full sequence with no number missing -> "1,2,3"
 
-3. The input would have more than one number missing -> "1,2,5"
+3. The input would be a non-digit -> "Y"
 
-4. The input would be a non-digit -> "Y"
+4. The input could contain a sequence with one of the pieces having a number and a non-digit -> "1,2Y,4"
 
-5. The input could contain a sequence with one of the pieces having a number and a non-digit -> "1,2Y,4"
-
-6. The input could have multiple of the same number in a sequence -> "1,1,3"
+5. The input could have multiple of the same number in a sequence -> "1,1,3"
