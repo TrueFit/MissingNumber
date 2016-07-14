@@ -43,30 +43,28 @@ Please fork this repository. When you have completed your solution, please issue
 Have fun.
 
 
+
 Finished Program
-----------------
-The specifications for the program to find a missing number were as follows:
-1. Accept a flat file as input.
-	- Each new line will contain a set of sequential numbers with one number missing.
-	- Each series will be comma delimited and in a random order
-2. Output the missing number for each series
+================
 
+Instructions
+------------
+- Accepting a flat file can be found in the following directory:
+	"/MissingNumber/lib/tf_number_finder.rb".
+	To change the file input, simply edit the file path where the comments specify.
 
-<><><><><><><><>
-Accepting a flat file can be found in the following directory:
-"/MissingNumber/lib/tf_number_finder.rb".
+- It seemed prudent to create a class for finding a missing number to capitalize on possible re-use.
+	The class NumberFinder can be found in the following directory:
+	"/MissingNumber/lib/number_finder_class.rb".
 
-To change the file input, simply edit the file path where the comments specify.
-
-It seemed prudent to create a class for finding a missing number to capitalize on possible re-use. The class NumberFinder can be found in the following directory:
-"/MissingNumber/lib/number_finder_class.rb".
-
-To use the class to find a missing number create an instance of the NumberFinder class, call the get_missing_number function, pass in any string, then output the result.
+- To find a missing number first create an instance of the NumberFinder class.
+	Then, call the get_missing_number function, pass in the input string, and output the result.
 	example:
 		classInstance = NumberFinder.new
 		puts classInstance.get_missing_number(someString)
 
-
+Discussion Points
+-----------------
 Some possible issues I foresaw were as follows:
 1. The input would only have one number in the sequence -> "1"
 	- The output returns nil as there is no number missing
@@ -86,6 +84,8 @@ Some possible issues I foresaw were as follows:
 	- Duplicates are ignored and the string is parsed as usual
 
 
+Notes
+-----
 TDD was used to write this program and can be found in the following directory:
 "/MissingNumber/spec/number_finder_spec.rb".
 
@@ -93,4 +93,4 @@ A "test.txt" file can also be found in the same directory. This file was used to
 
 I also sought out code reviews before I submitted this file. I had missed some unit tests and was given advice on some specific case Ruby styling. It also prompted a discussion of better organization, which was beneficial to the readability of the program and unit tests.
 
-Thanks so much for letting me work through this program. I had a blast working through some of the problems and thinking about possible solutions as well! 
+Thanks so much for letting me work through this program. I had a blast working through some of the problems and thinking about possible solutions as well!
