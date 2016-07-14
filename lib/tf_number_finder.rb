@@ -7,8 +7,8 @@ fileInput = "../spec/test_input.txt"
 
 finder = NumberFinder.new
 
-File.open(fileInput, "r").each_line do |line|
-  output = finder.get_missing_number(line)
+File.open(fileInput, "r").each_line do |current_line|
+  output = finder.get_missing_number(current_line)
   if(output != nil)
     puts output
   end
