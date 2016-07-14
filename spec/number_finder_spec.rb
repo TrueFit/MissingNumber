@@ -83,6 +83,73 @@ describe NumberFinder do
 
 
 
+  describe ".delete_extra_letters" do
+    context "given a string containing a single letter" do
+      it "returns an empty string" do
+        result = @num_finder.delete_extra_letters('s')
+        expect(result).to eql('')
+      end
+    end
+
+    context "given a string that contains a single digit number" do
+      it "returns the same string containing that single digit number" do
+        result = @num_finder.delete_extra_letters('1')
+        expect(result).to eql('1')
+      end
+    end
+
+    context "given a string that contains a multiple digit number" do
+      it "returns the same string containing that multiple digit number" do
+        result = @num_finder.delete_extra_letters('193')
+        expect(result).to eql('193')
+      end
+    end
+
+    context "given a string that contains multiple letters" do
+      it "returns an empty string" do
+        result = @num_finder.delete_extra_letters('alottaletters')
+        expect(result).to eql('')
+      end
+    end
+
+    context "given a string that contains a single digit number followed by a letter" do
+      it "returns a string containing that single digit number only" do
+        result = @num_finder.delete_extra_letters('1s')
+        expect(result).to eql('1')
+      end
+    end
+
+    context "given a string that contains a letter followed by a single digit number" do
+      it "returns a string containing that single digit number only" do
+        result = @num_finder.delete_extra_letters('r4')
+        expect(result).to eql('4')
+      end
+    end
+
+    context "given a string that contains a single digit, a letter, then another single digit number" do
+      it "returns a string containing only the two numbers in their same order" do
+        result = @num_finder.delete_extra_letters('1s2')
+        expect(result).to eql('12')
+      end
+    end
+
+    context "given a string that contains a letter, a single digit number, then another letter" do
+      it "returns a string containing only the number" do
+        result = @num_finder.delete_extra_letters('r1')
+        expect(result).to eql('1')
+      end
+    end
+
+    context "given a string that contains two letters then a multiple digit number" do
+      it "returns a string containing only the number" do
+        result = @num_finder.delete_extra_letters('wp10')
+        expect(result).to eql('10')
+      end
+    end
+  end
+
+
+
   describe ".sort_numbers" do
     context "given an array of two single digit numbers with no missing integers in between in order of largest to smallest" do
       it "returns an array of those numbers sorted from smallest to largest" do
@@ -175,7 +242,6 @@ describe NumberFinder do
         expect(result).to eql(3)
       end
     end
-
   end
 
 
@@ -185,73 +251,6 @@ describe NumberFinder do
       it "returns the missing sequential number" do
         result = @num_finder.get_missing_number('1,3')
         expect(result).to eql(2)
-      end
-    end
-  end
-
-
-
-  describe ".delete_extra_letters" do
-    context "given a string containing a single letter" do
-      it "returns an empty string" do
-        result = @num_finder.delete_extra_letters('s')
-        expect(result).to eql('')
-      end
-    end
-
-    context "given a string that contains a single digit number" do
-      it "returns the same string containing that single digit number" do
-        result = @num_finder.delete_extra_letters('1')
-        expect(result).to eql('1')
-      end
-    end
-
-    context "given a string that contains a multiple digit number" do
-      it "returns the same string containing that multiple digit number" do
-        result = @num_finder.delete_extra_letters('193')
-        expect(result).to eql('193')
-      end
-    end
-
-    context "given a string that contains multiple letters" do
-      it "returns an empty string" do
-        result = @num_finder.delete_extra_letters('alottaletters')
-        expect(result).to eql('')
-      end
-    end
-
-    context "given a string that contains a single digit number followed by a letter" do
-      it "returns a string containing that single digit number only" do
-        result = @num_finder.delete_extra_letters('1s')
-        expect(result).to eql('1')
-      end
-    end
-
-    context "given a string that contains a letter followed by a single digit number" do
-      it "returns a string containing that single digit number only" do
-        result = @num_finder.delete_extra_letters('r4')
-        expect(result).to eql('4')
-      end
-    end
-
-    context "given a string that contains a single digit, a letter, then another single digit number" do
-      it "returns a string containing only the two numbers in their same order" do
-        result = @num_finder.delete_extra_letters('1s2')
-        expect(result).to eql('12')
-      end
-    end
-
-    context "given a string that contains a letter, a single digit number, then another letter" do
-      it "returns a string containing only the number" do
-        result = @num_finder.delete_extra_letters('r1')
-        expect(result).to eql('1')
-      end
-    end
-
-    context "given a string that contains two letters then a multiple digit number" do
-      it "returns a string containing only the number" do
-        result = @num_finder.delete_extra_letters('wp10')
-        expect(result).to eql('10')
       end
     end
   end

@@ -81,7 +81,7 @@ Some possible issues I foresaw were as follows:
 	- Again, this would be a conversation with the other group members and would benefit from a good understanding of the direction and purpose of this program in relation to the project.
 
 5. The input could have multiple of the same number in a sequence -> "1,1,3"
-	- Duplicates are ignored and the string is parsed as usual
+	- Duplicates are ignored and then the string is parsed as usual.
 
 
 Notes

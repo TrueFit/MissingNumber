@@ -10,7 +10,6 @@ class NumberFinder
     end
   end
 
-  private
 
   def to_string_array(input_string)
     string_array = input_string.split(",")
@@ -21,9 +20,9 @@ class NumberFinder
     index_counter = 0
     unsorted_arr = Array.new
 
-    string_array.each do |numchar|
-      numchar = delete_extra_letters(numchar)
-      number = numchar.to_i
+    string_array.each do |number_string|
+      number_string = delete_extra_letters(number_string)
+      number = number_string.to_i
       unsorted_arr[index_counter] = number
       index_counter = index_counter + 1
     end
@@ -32,8 +31,8 @@ class NumberFinder
   end
 
 
-  def delete_extra_letters(input)
-    input = input.gsub(/[^[0-9]]/,"")
+  def delete_extra_letters(any_string)
+    number_string = any_string.gsub(/[^[0-9]]/,"")
   end
 
 
