@@ -1,48 +1,63 @@
 class NumberFinder
 
-  def get_missing_number(lineOfFile)
-    stringArr = to_string_array(lineOfFile)
-    if(stringArr.length>1)
-      unsortedArr = to_int_array(stringArr)
-      numberArr = sort_numbers(unsortedArr)
-      missingNum = check_for_missing_number(numberArr)
+  def get_missing_number(input_string)
+    string_array = to_string_array(input_string)
+
+    if(string_array.length > 1)
+      unsorted_arr = to_int_array(string_array)
+
+      sorted_arr = sort_numbers(unsorted_arr)
+
+      missing_num = check_for_missing_number(sorted_arr)
     end
   end
 
-  def to_string_array(fileString)
-    stringArr = fileString.split(",")
+
+  def to_string_array(input_string)
+    string_array = input_string.split(",")
   end
 
-  def to_int_array(stringArr)
-    indexCount = 0
-    unsortedArr = Array.new
-    stringArr.each do |numChar|
-      numchar = delete_extra_letters(numChar)
-      number = numChar.to_i
-      unsortedArr[indexCount] = number
-      indexCount = indexCount + 1
+
+  def to_int_array(string_array)
+    index_counter = 0
+    unsorted_arr = Array.new
+
+    string_array.each do |numchar|
+      numchar = delete_extra_letters(numchar)
+
+      number = numchar.to_i
+
+      unsorted_arr[index_counter] = number
+
+      index_counter = index_counter + 1
     end
-    return unsortedArr
+
+    return unsorted_arr
   end
+
 
   def delete_extra_letters(input)
     input = input.gsub(/[^[0-9]]/,"")
   end
 
-  def sort_numbers(unsortedArr)
-    numberArray = unsortedArr.sort
+
+  def sort_numbers(unsorted_arr)
+    unsorted_arr.sort
   end
 
-  def check_for_missing_number(numberArray)
-    missingNum = nil
-    # Checks each number agaist the next highest EXCEPT for the last number
-    (0..numberArray.length-2).each do |k|
-      if(numberArray[k]+1 != numberArray[k+1])
-        if(numberArray[k] != numberArray[k+1])
-          missingNum = numberArray[k]+1
-        end
+
+  def check_for_missing_number(sorted_arr)
+    missing_num = nil
+
+    (0..sorted_arr.length - 2).each do |k|
+
+      # Checks each number agaist the next highest EXCEPT for the last number &&
+      # checks for possible duplicate numbers
+      if(sorted_arr[k] + 1 != sorted_arr[k + 1] && sorted_arr[k] != sorted_arr[k + 1])
+        missing_num = sorted_arr[k] + 1
       end
     end
-    return missingNum
+    return missing_num
   end
+
 end
