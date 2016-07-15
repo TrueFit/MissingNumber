@@ -91,6 +91,6 @@ TDD was used to write this program and can be found in the following directory:
 
 A "test.txt" file can also be found in the same directory. This file was used to test the program once it was built. Normal input is stored there as well as any input that might cause problems.
 
-I also sought out code reviews before I submitted this file. I had missed some unit tests and was given advice on some specific case Ruby styling. It also prompted a discussion of better organization, which was beneficial to the readability of the program and unit tests.
+I also sought out code reviews before I submitted this file. I had missed some unit tests, I learned and implemented many Ruby style guidelines, and was directed to look through private vs. public functions, which I then added as well as combined and rewrote necessary unit tests. The code reviews also prompted a discussion of better organization, which was beneficial to the readability of the program and unit tests.
 
 Thanks so much for letting me work through this program. I had a blast working through some of the problems and thinking about possible solutions as well!

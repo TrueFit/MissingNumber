@@ -104,6 +104,5 @@ describe NumberFinder do
         expect(result).to eql(nil)
       end
     end
-
   end
 end
