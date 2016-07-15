@@ -11,6 +11,8 @@ class NumberFinder
   end
 
 
+  private
+
   def to_string_array(input_string)
     string_array = input_string.split(",")
   end
