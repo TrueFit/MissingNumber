@@ -1,0 +1,27 @@
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\bin\Debug\MissingNumber.exe.config
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\bin\Debug\MissingNumber.exe
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\bin\Debug\MissingNumber.pdb
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\obj\Debug\MissingNumber.csprojResolveAssemblyReference.cache
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\obj\Debug\MissingNumber.NumbersInput.resources
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\obj\Debug\MissingNumber.Properties.Resources.resources
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\obj\Debug\MissingNumber.csproj.GenerateResource.Cache
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\obj\Debug\MissingNumber.exe
+c:\users\jonathan\documents\visual studio 2015\Projects\MissingNumber\MissingNumber\obj\Debug\MissingNumber.pdb
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\bin\Debug\MissingNumber.exe.config
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\bin\Debug\MissingNumber.exe
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\bin\Debug\MissingNumber.pdb
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\obj\Debug\MissingNumber.csprojResolveAssemblyReference.cache
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\obj\Debug\MissingNumber.NumbersInput.resources
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\obj\Debug\MissingNumber.Properties.Resources.resources
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\obj\Debug\MissingNumber.csproj.GenerateResource.Cache
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\obj\Debug\MissingNumber.exe
+C:\Users\Bill Sr\Desktop\MissingNumber\MissingNumber\obj\Debug\MissingNumber.pdb
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\bin\Debug\MissingNumber.exe.config
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\bin\Debug\MissingNumber.exe
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\bin\Debug\MissingNumber.pdb
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\obj\Debug\MissingNumber.csprojResolveAssemblyReference.cache
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\obj\Debug\MissingNumber.NumbersInput.resources
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\obj\Debug\MissingNumber.Properties.Resources.resources
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\obj\Debug\MissingNumber.csproj.GenerateResource.Cache
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\obj\Debug\MissingNumber.exe
+C:\Users\Bill Sr\Documents\GitHub\MissingNumber\JonBalin_MissingNumber\MissingNumber\obj\Debug\MissingNumber.pdb
