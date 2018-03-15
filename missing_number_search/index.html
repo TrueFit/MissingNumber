@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Missing Number Search</title>
+  <script src="vue.js"></script>
+  <script src="missingNumber.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2>Missing Number Detector</h2>
+      <p class="lead">
+        Upload your text file with each pattern seperated by a new line. </br>Each new line should contain a set of sequential numbers with one number missing. </br>Each series should be comma delimited and in a random order.</p>
+    </div>
+    <div id="app" class="row justify-content-center ">
+      <div class="col-md-3">
+        <form action="" class="form-inline">
+          <h4>Upload File</h4>
+          <input type="file" @change="fileUpload" class="form-control-file">
+        </form>
+      </div>
+      <div class="col-md-9">
+        <h4 class="text-center">Missing Numbers</h4>
+        <table class="table" id="resultTable">
+          <thead class="text-center">
+            <tr>
+              <th scope="col">Line #</th>
+              <th scope="col">Original Pattern</th>
+              <th scope="col">Missing Number</th>
+            </tr>
+            <tr v-for="line in fileData">
+              <td scope="row">{{ line.line }}</td>
+              <td>{{ line.originalPattern }}</td>
+              <td>{{ line.missingNumber }}</td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
